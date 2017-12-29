@@ -1,0 +1,74 @@
+body {
+    background-image: url(https://media.istockphoto.com/photos/basketball-arena-picture-id466336640?k=6&m=466336640&s=612x612&w=0&h=ijsMMFZyXG2A9zKNjHCsPREVZaYbVZFowKTb7ZlS6a0=);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+p {
+    width: 50%;
+    color: black;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 22px;
+}
+
+header {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, .50);
+    border: 1px solid orange;
+}
+
+.header-container {
+    width: 600px;
+    margin: 0 auto;
+    background-color: white;
+}
+ 
+.center {
+    margin: 0 auto;
+}
+
+h1 {
+    color: #ff841a;
+    width: 460px;
+    text-align: center;
+    border: 1px solid white;
+    font-size: 26px;
+    padding: 27px 0;
+    background: white;
+}
+
+#logo {
+    float: right;
+    width: 10%;
+}
+
+.float {
+    float: left;  
+}
+
+.bball-img {
+    width: 11%;
+    height: 82px;
+}
+
+#question {
+    margin-top: 50px;
+}
+
+#answer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#win-image {
+    width: 80%;
+    margin-top: 50px;
+    margin-left: 10%;
+}
