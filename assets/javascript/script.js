@@ -81,6 +81,9 @@ function winConditions() {
         underScores();
     }
     if(hiddenAnswer.join("") === randomAnswer) {
+        guesses = 6;
+        $("#guesses-left").text(guesses);
+        $("p").remove("#loss-statement");
         guessArray = [];
         $("#guesses").text(guessArray);
         userInputArray = [];
