@@ -2,6 +2,7 @@
 // Variables
 var userInput;
 var userInputArray = [];
+var guessArray = [];
 var hiddenAnswer = [];
 var hiddenAnswerString;
 var wins = 0;
@@ -44,7 +45,6 @@ $(document).on("keypress", function(event) {
 function duplicateTest() {
     if(userInputArray.indexOf(userInput) === -1) {
         userInputArray.push(userInput);
-        console.log(userInputArray);
         if(randomAnswer.includes(userInput)) {
             for(var i = 0; i < randomAnswer.length; i++) {
                 if(randomAnswer[i] === userInput) {
@@ -54,13 +54,35 @@ function duplicateTest() {
             }
         } else {
             guesses--;
-            $("#guesses").text(guesses);
+            guessArray.push(" " + userInput);
+            $("#guesses").text(guessArray);
+            $("#guesses-left").text(guesses);
         }
+        
     } 
 }
 
 function winConditions() {
+    if(guesses === 0) {
+        userInputArray = [];
+        guessArray = [];
+        $("#guesses").text(guessArray);
+        losses++;
+        $("#loss").text(losses);
+        guesses = 6;
+        $("#guesses-left").text(guesses);
+        $("p").remove("#loss-statement");
+        var lossStatement = $("<p id=loss-statement>");
+        $("#win-image").height(325);
+        $("#win-image").attr("src", "https://windycitizensports.files.wordpress.com/2012/04/lebron-crying.jpg?w=470")
+        lossStatement.text("You Lost! The previous Answer was " + randomAnswer);
+        lossStatement.insertBefore("#question");
+        getRandomValues();
+        underScores();
+    }
     if(hiddenAnswer.join("") === randomAnswer) {
+        guessArray = [];
+        $("#guesses").text(guessArray);
         userInputArray = [];
         wins++;
         $("#win").text(wins);
@@ -68,7 +90,7 @@ function winConditions() {
         $("#win-image").attr("src", objectArray[randomIndex].gif);
         getRandomValues();
         underScores();
-    } else if(// Guess === 0) {}
+     } 
 }
 
 function getRandomValues() {
