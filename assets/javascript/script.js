@@ -1,3 +1,4 @@
+$(document).ready(function(){});
 
 // Variables
 var userInput;
@@ -35,11 +36,14 @@ var randomQuestion = objectArray[randomIndex].question;
 $("#question").text(randomQuestion);
 underScores();
 // Collect keypress and store to userInput
-$(document).on("keypress", function(event) {
-    userInput = event.key;
-    duplicateTest();
-    winConditions();
-})
+$(document).ready(function() {
+    $(document).on("keypress", function(event) {
+        userInput = event.key;
+        duplicateTest();
+        winConditions();
+    })
+});
+
 
 // Functions
 function duplicateTest() {
